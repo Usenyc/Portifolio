@@ -57,3 +57,13 @@ body {
   gap: 18px;
   align-items: flex-end;
 }
+
+.tab {
+  position: relative;
+  display: inline-block;
+  padding: 14px 18px 12px;
+  text-decoration: none;
+  color: #d7dbe5;
+  font-weight: 600;
+}
+.tab:hover { color: #fff }
