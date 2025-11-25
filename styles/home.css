@@ -30,4 +30,13 @@ body {
   z-index: 1;
 }
 
+.topbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 14px 22px;
+  background: var(--bar);
+  z-index: 2;
+}
 
