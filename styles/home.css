@@ -19,3 +19,115 @@ body {
   color: var(--text);
   background: var(--bg);
 }
+
+.edge {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 100vh;
+  background: var(--edge);
+  z-index: 1;
+}
+
+.topbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 14px 22px;
+  background: var(--bar);
+  z-index: 2;
+}
+
+.window-dots {
+  display: flex;
+  gap: 10px;
+}
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+}
+.dot.gray { background: var(--gray) }
+.dot.amber { background: var(--amber) }
+
+.nav {
+  display: flex;
+  gap: 18px;
+  align-items: flex-end;
+}
+
+.tab {
+  position: relative;
+  display: inline-block;
+  padding: 14px 18px 12px;
+  text-decoration: none;
+  color: #d7dbe5;
+  font-weight: 600;
+}
+.tab:hover { color: #fff }
+
+.tab.active {
+  color: #fff;
+  background: var(--tab);
+  border-radius: 16px 16px 0 0;
+  padding: 16px 20px 12px;
+}
+.tab.active::before {
+  content: "";
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 92px;
+  height: 28px;
+  background: var(--tab);
+  border-radius: 16px 16px 0 0;
+}
+
+.surface {
+  position: relative;
+  margin: 0;
+  width: 100%;
+  min-height: calc(100vh - 60px);
+  background: var(--surface);
+}
+
+.hero-copy {
+  position: absolute;
+  left: 64px;
+  bottom: 96px;
+  max-width: 720px;
+}
+
+.title {
+  margin: 0 0 6px 0;
+  font-family: Sora, Inter, sans-serif;
+  font-weight: 600;
+  font-size: clamp(24px, 4vw, 36px);
+  letter-spacing: 0.02em;
+  color: var(--text);
+}
+
+.sub {
+  margin: 0 0 26px;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.vision {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--link);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 14px;
+  border-radius: 999px;
+}
+.vision:hover { opacity: 0.95 }
+
+.icon-link {
+  width: 22px;
+  height: 22px; }
