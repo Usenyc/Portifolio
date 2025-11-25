@@ -67,3 +67,21 @@ body {
   font-weight: 600;
 }
 .tab:hover { color: #fff }
+
+.tab.active {
+  color: #fff;
+  background: var(--tab);
+  border-radius: 16px 16px 0 0;
+  padding: 16px 20px 12px;
+}
+.tab.active::before {
+  content: "";
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 92px;
+  height: 28px;
+  background: var(--tab);
+  border-radius: 16px 16px 0 0;
+}
