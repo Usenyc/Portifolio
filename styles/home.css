@@ -19,3 +19,15 @@ body {
   color: var(--text);
   background: var(--bg);
 }
+
+.edge {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 100vh;
+  background: var(--edge);
+  z-index: 1;
+}
+
+
