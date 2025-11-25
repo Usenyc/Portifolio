@@ -85,3 +85,49 @@ body {
   background: var(--tab);
   border-radius: 16px 16px 0 0;
 }
+
+.surface {
+  position: relative;
+  margin: 0;
+  width: 100%;
+  min-height: calc(100vh - 60px);
+  background: var(--surface);
+}
+
+.hero-copy {
+  position: absolute;
+  left: 64px;
+  bottom: 96px;
+  max-width: 720px;
+}
+
+.title {
+  margin: 0 0 6px 0;
+  font-family: Sora, Inter, sans-serif;
+  font-weight: 600;
+  font-size: clamp(24px, 4vw, 36px);
+  letter-spacing: 0.02em;
+  color: var(--text);
+}
+
+.sub {
+  margin: 0 0 26px;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.vision {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--link);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 14px;
+  border-radius: 999px;
+}
+.vision:hover { opacity: 0.95 }
+
+.icon-link {
+  width: 22px;
+  height: 22px;
