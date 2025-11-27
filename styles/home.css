@@ -11,8 +11,15 @@
   --link: #e6ebf5;
 }
 
-* { box-sizing: border-box }
-html, body { height: 100% }
+* {
+  box-sizing: border-box
+}
+
+html,
+body {
+  height: 100%
+}
+
 body {
   margin: 0;
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -44,13 +51,20 @@ body {
   display: flex;
   gap: 10px;
 }
+
 .dot {
   width: 14px;
   height: 14px;
   border-radius: 50%;
 }
-.dot.gray { background: var(--gray) }
-.dot.amber { background: var(--amber) }
+
+.dot.gray {
+  background: var(--gray)
+}
+
+.dot.amber {
+  background: var(--amber)
+}
 
 .nav {
   display: flex;
@@ -66,7 +80,10 @@ body {
   color: #d7dbe5;
   font-weight: 600;
 }
-.tab:hover { color: #fff }
+
+.tab:hover {
+  color: #fff
+}
 
 .tab.active {
   color: #fff;
@@ -74,31 +91,64 @@ body {
   border-radius: 16px 16px 0 0;
   padding: 16px 20px 12px;
 }
-.tab.active::before {
-  content: "";
-  position: absolute;
-  top: -16px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 92px;
-  height: 28px;
-  background: var(--tab);
-  border-radius: 16px 16px 0 0;
-}
 
 .surface {
   position: relative;
   margin: 0;
   width: 100%;
   min-height: calc(100vh - 60px);
-  background: var(--surface);
+
+  background: var(--surface) url("/assets/fundo1.png") center center no-repeat;
+  background-size: cover;
+  /* opcional: deixa sempre centralizado/bonito */
+}
+
+.bottom-part {
+  position: relative;
+  width: 100%;
+  min-height: 600px;
+  /* ajuste como quiser */
+
+  /* Aqui vira o fundo */
+  background-image: url("/assets/fundo1v.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+}
+
+/* Grid dos cards */
+.cards-container {
+  position: relative;
+  /* garante que fica acima do fundo */
+  z-index: 2;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  width: 80%;
 }
 
 .hero-copy {
   position: absolute;
-  left: 64px;
-  bottom: 96px;
+  left: 34%;
+  bottom: 150px;
+  transform: translateX(-50%);
   max-width: 720px;
+  text-align: left;
+}
+
+.hero-copy img {
+  width: 100%;
+  max-width: 600px;
+  /* ajuste conforme quiser */
+  margin: 0 auto 12px;
+  display: block;
+
 }
 
 .title {
@@ -126,8 +176,112 @@ body {
   padding: 10px 14px;
   border-radius: 999px;
 }
-.vision:hover { opacity: 0.95 }
+
+.vision:hover {
+  opacity: 0.95
+}
 
 .icon-link {
   width: 22px;
-  height: 22px; }
+  height: 22px;
+}
+
+.center-img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.center-img {
+  max-width: auto;
+  height: auto;
+  display: block;
+}
+
+.separator {
+  width: 100%;
+  height: 2px;
+  /* altura da barra */
+  background-color: var(--bg);
+  /* a cor da barra */
+  margin: 40px 0;
+  /* espaço antes e depois */
+}
+
+.cards-container {
+  position: absolute;
+  left: 600px;
+  /* encosta no lado direito */
+  top: 50%;
+  transform: translateY(-50%);
+  /* centraliza verticalmente */
+
+  display: flex;
+  flex-direction: row;
+  /* cards lado a lado */
+  gap: 24px;
+
+  z-index: 10;
+  /* fica acima do background */
+}
+
+.card {
+  width: 260px; /* ⬅️ LARGURA IGUAL PARA TODOS */
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 50px;
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+
+.card h3 {
+  margin-bottom: 300px;
+  color: #fff;
+}
+
+.card p {
+  color: #cfcfcf;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 15px 30px rgba(25, 24, 44, 0.11);
+}
+
+.logo-shine {
+  position: relative;
+  display: inline-block;
+  overflow: hidden; /* esconde o brilho fora dos limites da imagem */
+  transition: transform 0.3s ease;
+}
+
+
+
+.logo-shine:hover {
+  transform: scale(1.03); /* leve aumento opcional */
+}
+
+.logo-shine::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 80%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgb(209, 18, 18) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  transition: left 0.7s ease;
+}
+
+.logo-shine:hover::after {
+  left: 120%;
+}
