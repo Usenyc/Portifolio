@@ -210,20 +210,14 @@ body {
 }
 
 .cards-container {
-  position: absolute;
-  left: 600px;
-  /* encosta no lado direito */
-  top: 50%;
-  transform: translateY(-50%);
-  /* centraliza verticalmente */
+  position: relative;
 
   display: flex;
-  flex-direction: row;
-  /* cards lado a lado */
+  justify-content: center;
   gap: 24px;
+  margin-left: 400px;
 
   z-index: 10;
-  /* fica acima do background */
 }
 
 .card {
@@ -252,36 +246,19 @@ body {
   box-shadow: 0 15px 30px rgba(25, 24, 44, 0.11);
 }
 
-.logo-shine {
-  position: relative;
-  display: inline-block;
-  overflow: hidden; /* esconde o brilho fora dos limites da imagem */
-  transition: transform 0.3s ease;
-}
 
-
-
-.logo-shine:hover {
-  transform: scale(1.03); /* leve aumento opcional */
-}
-
-.logo-shine::after {
-  content: "";
+.side-img {
+  width: 260px;
   position: absolute;
-  top: 0;
-  left: -120%;
-  width: 80%;
-  height: 100%;
-  background: linear-gradient(
-    120deg,
-    transparent 0%,
-    rgb(209, 18, 18) 50%,
-    transparent 100%
-  );
-  transform: skewX(-20deg);
-  transition: left 0.7s ease;
+  top: 40%;
+  left: 700px; /* AGORA ELA VAI PARA O LADO ESQUERDO */
+  transform: translateY(-60%); /* centraliza verticalmente */
+  z-index: 4;
+  pointer-events: none;
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease-out;
 }
 
-.logo-shine:hover::after {
-  left: 120%;
+.side-img.right {
+  transform: translateY(50px); /* ajuste fino */
 }
