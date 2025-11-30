@@ -97,20 +97,51 @@ body {
   margin: 0;
   width: 100%;
   min-height: calc(100vh - 60px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* garante centro vertical */
+  position: relative;
 
-  background: var(--surface) url("/assets/fundo1.png") center center no-repeat;
-  background-size: cover;
+
   /* opcional: deixa sempre centralizado/bonito */
 }
 
-.bottom-part {
+.below-nav {
+  position: relative;
+  width: 100%;
+  min-height: 400px; /* altura da seção */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+
+  /* fundo diferente só nessa parte */
+  background: url("/assets/fundo1.png") center center no-repeat;
+  background-size: cover;
+}
+
+.bottom2-part {
+  position: relative;
+  width: 100%;
+  min-height: 600px; /* altura mínima */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+
+  /* aqui você escolhe o fundo */
+  background: url("/assets/fundo3.png") center center no-repeat;
+  background-size: cover;
+}
+.bottom1-part {
   position: relative;
   width: 100%;
   min-height: 600px;
   /* ajuste como quiser */
 
   /* Aqui vira o fundo */
-  background-image: url("/assets/fundo1v.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -119,7 +150,9 @@ body {
   justify-content: center;
   align-items: center;
   padding: 50px 0;
+
 }
+
 
 /* Grid dos cards */
 .cards-container {
@@ -193,12 +226,6 @@ body {
   height: auto;
 }
 
-.center-img {
-  max-width: auto;
-  height: auto;
-  display: block;
-}
-
 .separator {
   width: 100%;
   height: 2px;
@@ -221,7 +248,8 @@ body {
 }
 
 .card {
-  width: 260px; /* ⬅️ LARGURA IGUAL PARA TODOS */
+  width: 260px;
+  /* ⬅️ LARGURA IGUAL PARA TODOS */
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 14px;
@@ -251,8 +279,10 @@ body {
   width: 260px;
   position: absolute;
   top: 40%;
-  left: 700px; /* AGORA ELA VAI PARA O LADO ESQUERDO */
-  transform: translateY(-60%); /* centraliza verticalmente */
+  left: 700px;
+  /* AGORA ELA VAI PARA O LADO ESQUERDO */
+  transform: translateY(-60%);
+  /* centraliza verticalmente */
   z-index: 4;
   pointer-events: none;
   transform-style: preserve-3d;
@@ -260,5 +290,65 @@ body {
 }
 
 .side-img.right {
-  transform: translateY(50px); /* ajuste fino */
+  transform: translateY(50px);
+  /* ajuste fino */
+}
+
+.circle-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.circle1, .circle2 {
+  position: absolute;
+  left: 50%;
+  width: 400px;
+  height: 220px;
+  transition: transform 0.6s ease;
+  transform: translateX(-50%);
+}
+
+.circle1 {
+  top: calc(50% - 260px); /* metade da altura */
+}
+
+.circle2 {
+  top: calc(50% + -50px);
+}
+
+.circle1 img, .circle2 img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.message {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 20%);
+  font-family: 'Sora', sans-serif;
+  font-size: 70px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  z-index: 10;
+  white-space: nowrap;
+}
+
+/* Posicionamento vertical */
+#message1 { top: calc(50% - 150px); }
+#message2 { top: calc(50% - 90px); }
+#message3 { top: calc(50% - 35px); }
+#message4 {
+  top: calc(50% + 70px); /* mantém a posição */
+  font-size: 20px;        /* aumenta o tamanho da fonte */
+  font-weight: 100;       /* deixa mais grosso (bold extra) */
+  color: #ffffff;         /* opcional: muda a cor para destacar */
 }
