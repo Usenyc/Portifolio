@@ -19,7 +19,10 @@ html,
 body {
   height: 100%
 }
-
+  /*  
+    - Faz o HTML e o body ocuparem 100% da altura da tela.
+    - Necessário para layouts centralizados verticalmente.
+  */
 body {
   margin: 0;
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -38,16 +41,24 @@ body {
 }
 
 .topbar {
-  position: relative;
+  position: fixed; /* agora fica travada no topo o topbar */
+  top: 0;
+  left: 0;
+  width: 100%;
+
   display: flex;
   align-items: center;
   gap: 24px;
   padding: 14px 22px;
   background: var(--bar);
-  z-index: 2;
+  z-index: 999; /* bem acima de tudo */
+  justify-content: center;
 }
-
 .window-dots {
+  position: fixed;   /* fixa na tela */
+  top: 14px 22px;         /* mesmo padding da topbar */
+  left: 22px;        /* encostadas na esquerda */
+  z-index: 999;     /* acima de tudo */
   display: flex;
   gap: 10px;
 }
