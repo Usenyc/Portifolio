@@ -531,7 +531,7 @@ body {
   transform: translateX(-50%) translateY(0); /* sobe quando passa o mouse */
 }
 
-/* estado inicial do footer2: invisível */
+
 .footer2 {
   position: absolute;
   bottom: 4%;                 
@@ -540,13 +540,13 @@ body {
   font-size: 18px;
   font-weight: 100;
   color: #ffffff;
-  opacity: 0;                      /* começa invisível */
-  transition: opacity 0.8s ease;   /* suaviza o fade */
+  opacity: 0;                    
+  transition: opacity 0.8s ease; 
   z-index: 16;
   font-family: 'Sora', sans-serif;
 }
 
-/* quando passar o mouse no footer, o footer2 aparece */
+
 .footer:hover + .footer2 {
   opacity: 1;
 }
@@ -564,13 +564,13 @@ body {
   font-size: 18px;
   font-weight: 100;
   color: #ffffff;
-  opacity: 0;                      /* começa invisível */
-  transition: opacity 0.8s ease;   /* suaviza o fade */
+  opacity: 0;                     
+  transition: opacity 0.8s ease; 
   z-index: 16;
   font-family: 'Sora', sans-serif;
 }
 
-/* quando passar o mouse no footer, o footer3 também aparece */
+
 .footer:hover ~ .footer3 {
   transform: translateX(-50%) translateY(0);
   opacity: 1;
