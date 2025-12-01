@@ -419,7 +419,7 @@ body {
   color: #cfd3db;
 }
 
-bottom3-part {
+.bottom3-part {
   position: relative;
   width: 100%;
   min-height: 600px; /* altura mínima */
@@ -431,4 +431,85 @@ bottom3-part {
   /* aqui você escolhe o fundo */
   background: url("/assets/fundo3.png") center center no-repeat;
   background-size: cover;
+}
+
+.tab-bottom {
+
+  display: block;   
+  position: absolute;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  font-family: 'Sora', sans-serif;
+  font-size: 150px;
+  font-weight: 700;
+  color: #fff;
+  opacity: 1;
+  z-index: 10;
+  white-space: nowrap;
+  transform-style: preserve-3d;
+  transition: transform 0.2s ease;
+}
+
+
+#tab-bottom1 { top: calc(50% - 150px);
+  perspective: 1000px; }
+#tab-bottom2 { top: calc(52% - 40px);   
+  left: 20%;
+  perspective: 1000px;}
+#tab-bottom3 { top: calc(50% - 20px);
+  left: 35%;
+  perspective: 1000px;}
+#tab-bottom4 {
+  top: calc(50% - -60px);
+  left: 35%;  /* desce mais para ficar abaixo */
+  font-size: 30px;
+  font-weight: 100;
+  color: #ffffff
+}
+
+
+#tab-bottom5{
+  top: calc(50% - -90px);
+  left: 35%;  /* desce mais para ficar abaixo */
+  font-size: 30px;
+  font-weight: 100;
+  color: #ffffff
+}
+#tab-bottom6{
+  top: calc(50% - -120px);
+  left: 35%;  /* desce mais para ficar abaixo */
+  font-size: 30px;
+  font-weight: 100;
+  color: #ffffff
+}
+
+/* sombra inicial */
+#tab-bottom1, #tab-bottom2, #tab-bottom3 {
+  text-shadow: 0 8px 18px rgba(252, 252, 252, 0.6);
+}
+
+.side-img2 {
+  position: absolute;
+  top:15%;
+  right: 200px;          
+  transform: translateY(-50%) rotate(-50%); 
+  width:600px;         
+  z-index: 5;           
+}
+
+.side-img2.left {
+  left: 40px;           
+  right: auto;
+  transform: translateY(-50%) rotate(10deg);
+}
+
+.footer {
+  position: absolute;       
+  top: 13%;                 
+  left: 50%;                
+  transform: translateX(-50%); 
+  width: 1600px;            
+  height: auto;            
+  transition: transform 0.4s ease; /* suaviza o movimento */
+  z-index: 16;
 }
