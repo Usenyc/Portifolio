@@ -20,6 +20,10 @@ body {
   height: 100%
 }
 
+/*  
+    - Faz o HTML e o body ocuparem 100% da altura da tela.
+    - Necessário para layouts centralizados verticalmente.
+  */
 body {
   margin: 0;
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -38,16 +42,31 @@ body {
 }
 
 .topbar {
-  position: relative;
+  position: fixed;
+  /* agora fica travada no topo o topbar */
+  top: 0;
+  left: 0;
+  width: 100%;
+
   display: flex;
   align-items: center;
   gap: 24px;
   padding: 14px 22px;
   background: var(--bar);
-  z-index: 2;
+  z-index: 999;
+  /* bem acima de tudo */
+  justify-content: center;
 }
 
 .window-dots {
+  position: fixed;
+  /* fixa na tela */
+  top: 14px 22px;
+  /* mesmo padding da topbar */
+  left: 22px;
+  /* encostadas na esquerda */
+  z-index: 999;
+  /* acima de tudo */
   display: flex;
   gap: 10px;
 }
@@ -111,7 +130,8 @@ body {
 .below-nav {
   position: relative;
   width: 100%;
-  min-height: 400px; /* altura da seção */
+  min-height: 400px;
+  /* altura da seção */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -125,39 +145,20 @@ body {
 .bottom2-part {
   position: relative;
   width: 100%;
-  min-height: 600px; /* altura mínima */
+  min-height: 600px;
+  /* altura mínima */
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 50px 0;
 
   /* aqui você escolhe o fundo */
-  background: url("/assets/fundo3.png") center center no-repeat;
+  background: url("/assets/fundo_3.png") center center no-repeat;
   background-size: cover;
 }
-.bottom1-part {
-  position: relative;
-  width: 100%;
-  min-height: 600px;
-  /* ajuste como quiser */
 
-  /* Aqui vira o fundo */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 50px 0;
-
-}
-
-
-/* Grid dos cards */
 .cards-container {
   position: relative;
-  /* garante que fica acima do fundo */
   z-index: 2;
 
   display: grid;
@@ -178,7 +179,6 @@ body {
 .hero-copy img {
   width: 100%;
   max-width: 600px;
-  /* ajuste conforme quiser */
   margin: 0 auto 12px;
   display: block;
 
@@ -236,10 +236,12 @@ body {
   /* espaço antes e depois */
 }
 
-.cards-container {
-  position: relative;
 
+
+.bottom4-part {
+  position: relative;
   display: flex;
+  gap: 20px;
   justify-content: center;
   gap: 24px;
   margin-left: 400px;
@@ -247,42 +249,45 @@ body {
   z-index: 10;
 }
 
-.card {
-  width: 260px;
-  /* ⬅️ LARGURA IGUAL PARA TODOS */
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 14px;
-  padding: 50px;
-  backdrop-filter: blur(8px);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
+.pagina {
+  width: 100px;
+  height: 500px;
+  margin: 10px;
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 0.4s ease, background-color 0.4s ease;
 }
 
-
-.card h3 {
-  margin-bottom: 300px;
-  color: #fff;
+.pagina:hover {
+  width: 300px;
+  background-color: rgba(255, 255, 255, 0.2); 
 }
 
-.card p {
-  color: #cfcfcf;
-}
+.bottom1-part {
+  position: relative;
+  width: 100%;
+  min-height: 600px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
 
-.card:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 15px 30px rgba(25, 24, 44, 0.11);
 }
-
 
 .side-img {
   width: 260px;
   position: absolute;
   top: 40%;
   left: 700px;
-  /* AGORA ELA VAI PARA O LADO ESQUERDO */
   transform: translateY(-60%);
-  /* centraliza verticalmente */
+
   z-index: 4;
   pointer-events: none;
   transform-style: preserve-3d;
@@ -304,7 +309,8 @@ body {
 
 }
 
-.circle1, .circle2 {
+.circle1,
+.circle2 {
   position: absolute;
   left: 50%;
   width: 400px;
@@ -314,14 +320,16 @@ body {
 }
 
 .circle1 {
-  top: calc(50% - 260px); /* metade da altura */
+  top: calc(50% - 260px);
+  /* metade da altura */
 }
 
 .circle2 {
   top: calc(50% + -50px);
 }
 
-.circle1 img, .circle2 img {
+.circle1 img,
+.circle2 img {
   width: 100%;
   height: auto;
   display: block;
@@ -343,23 +351,32 @@ body {
 }
 
 /* Posicionamento vertical */
-#message1 { top: calc(50% - 150px); }
-#message2 { top: calc(50% - 90px); }
-#message3 { top: calc(50% - 35px); }
+#message1 {
+  top: calc(50% - 150px);
+}
+
+#message2 {
+  top: calc(50% - 90px);
+}
+
+#message3 {
+  top: calc(50% - 35px);
+}
+
 #message4 {
-  top: calc(50% + 70px); 
-  font-size: 20px; 
-  font-weight: 100;   
+  top: calc(50% + 70px);
+  font-size: 20px;
+  font-weight: 100;
   color: #ffffff;
 }
 
 .card-img {
-  width: 100%;  
-  height: auto; 
-  border-radius: 10px; 
-  margin-bottom: 16px; 
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 16px;
   display: block;
-    filter: blur(4px); 
+  filter: blur(4px);
 }
 
 .tech-panels {
@@ -368,8 +385,9 @@ body {
   align-items: stretch;
   gap: 32px;
   padding: 80px 40px;
-  min-height: 600px; 
-  background: radial-gradient(circle at center,#2c2f3a , #1f2230); /* cores mais fortes para testar */
+  min-height: 600px;
+  background: radial-gradient(circle at center, #2c2f3a, #1f2230);
+  /* cores mais fortes para testar */
 }
 
 
@@ -386,7 +404,8 @@ body {
 
 .panel:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(255, 180, 0, 0.3); /* sombra colorida */
+  box-shadow: 0 20px 40px rgba(255, 180, 0, 0.3);
+  /* sombra colorida */
 }
 
 .panel img {
@@ -408,16 +427,279 @@ body {
   color: #cfd3db;
 }
 
-bottom3-part {
+.bottom3-part {
   position: relative;
   width: 100%;
-  min-height: 600px; /* altura mínima */
+  min-height: 600px;
+  /* altura mínima */
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 50px 0;
+  overflow: hidden;
+  perspective: 1200px;
 
   /* aqui você escolhe o fundo */
   background: url("/assets/fundo3.png") center center no-repeat;
   background-size: cover;
+}
+
+.tab-bottom {
+
+  display: block;
+  position: absolute;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  font-family: 'Sora', sans-serif;
+  font-size: 150px;
+  font-weight: 700;
+  color: #fff;
+  opacity: 1;
+  z-index: 10;
+  white-space: nowrap;
+  transform-style: preserve-3d;
+  transition: transform 0.2s ease;
+}
+
+
+#tab-bottom1 {
+  top: calc(50% - 150px);
+  perspective: 1000px;
+}
+
+#tab-bottom2 {
+  top: calc(52% - 40px);
+  left: 20%;
+  perspective: 1000px;
+}
+
+#tab-bottom3 {
+  top: calc(50% - 20px);
+  left: 35%;
+  perspective: 1000px;
+}
+
+#tab-bottom4 {
+  top: calc(50% - -60px);
+  left: 35%;
+  /* desce mais para ficar abaixo */
+  font-size: 30px;
+  font-weight: 100;
+  color: #ffffff
+}
+
+
+#tab-bottom5 {
+  top: calc(50% - -90px);
+  left: 35%;
+  /* desce mais para ficar abaixo */
+  font-size: 30px;
+  font-weight: 100;
+  color: #ffffff
+}
+
+#tab-bottom6 {
+  top: calc(50% - -120px);
+  left: 35%;
+  /* desce mais para ficar abaixo */
+  font-size: 30px;
+  font-weight: 100;
+  color: #ffffff
+}
+
+/* sombra inicial */
+#tab-bottom1,
+#tab-bottom2,
+#tab-bottom3 {
+  text-shadow: 0 8px 18px rgba(252, 252, 252, 0.6);
+}
+
+.side-img2 {
+  display: flex;
+  position: absolute;
+  top: 15%;
+  right: 200px;
+  transform: translateY(-50%) rotate(-50%);
+  width: 600px;
+  z-index: 5;
+}
+
+.side-img2.left {
+  left: 40px;
+  right: auto;
+  transform: translateY(-50%) rotate(10deg);
+}
+
+.footer {
+  display: flex;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1600px;
+  height: auto;
+  transition: transform 0.4s ease;
+  /* suaviza o movimento */
+  z-index: 16;
+}
+
+/* estilos específicos */
+.footer {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  width: 1600px;
+  height: auto;
+  transition: transform 0.6s ease;
+  /* suaviza o movimento */
+  z-index: 16;
+}
+
+.footer:hover {
+  transform: translateX(-50%) translateY(0);
+  /* sobe quando passa o mouse */
+}
+
+
+.footer2 {
+  position: absolute;
+  bottom: 4%;
+  left: 30%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  font-weight: 100;
+  color: #ffffff;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  z-index: 16;
+  font-family: 'Sora', sans-serif;
+}
+
+
+.footer:hover+.footer2 {
+  opacity: 1;
+}
+
+#men2 {
+  bottom: 3%;
+
+}
+
+.footer3 {
+  position: absolute;
+  bottom: 1.5%;
+  left: 26%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  font-weight: 100;
+  color: #ffffff;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  z-index: 16;
+  font-family: 'Sora', sans-serif;
+}
+
+
+.footer:hover~.footer3 {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+/* Estilo do ícone Instagram */
+.instagram {
+  width: 50px;
+  /* tamanho pequeno */
+  height: 50px;
+  cursor: pointer;
+}
+
+.github {
+  width: 50px;
+  /* tamanho pequeno */
+  height: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.linkedin {
+  /* tamanho pequeno */
+  height: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.instagram:hover {
+  transform: scale(1.2);
+  /* aumenta levemente no hover */
+}
+
+.github:hover {
+  transform: scale(1.2);
+  /* aumenta levemente no hover */
+}
+
+.linkedin:hover {
+  transform: scale(1.2);
+  /* aumenta levemente no hover */
+}
+
+.social-icons {
+  position: absolute;
+  bottom: -0.5%;
+  left: 70%;
+  transform: translateX(-50%) translateY(50px);
+  /* começa deslocado */
+  opacity: 0;
+  transition: transform 0.6s ease, opacity 0.8s ease;
+  display: flex;
+  gap: 10px;
+  z-index: 16;
+}
+
+.footer:hover~.social-icons {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+/* From Uiverse.io by alexroumi */
+button {
+  padding: 15px 25px;
+  left: -100px;
+  border: unset;
+  border-radius: 30px;
+  color: #6c6f75;
+  z-index: 1;
+  background: #e8e8e8;
+  position: relative;
+  font-weight: 1000;
+  font-size: 20px;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms;
+  overflow: hidden;
+  top: 200px;
+  z-index: 2000;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  border-radius: 15px;
+  background-color: #6c6f75;
+  z-index: -1;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms
+}
+
+button:hover {
+  color: #e8e8e8;
+}
+
+button:hover::before {
+  width: 100%;
 }
