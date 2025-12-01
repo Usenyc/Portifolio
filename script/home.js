@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const shine = btn.querySelector(".shine");
     const px = (x / rect.width) * 100;
     const py = (y / rect.height) * 100;
-    shine.style.background = `radial-gradient(140px 70px at ${px}% ${py}%, rgba(255, 255, 255, 0.26), transparent 60%)`;
+    shine.style.background = `radial-gradient(140px 70px at ${px}% ${py}%, rgba(255, 255, 255, 0), transparent 60%)`;
   });
 
   // Ao sair do botão, volta ao estado inicial
@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
     tabs.forEach(tab => {
       // mantém posição original, só inclina
       tab.style.transform = `translate(-50%, -50%) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-      tab.style.textShadow = `${-rotateY}px ${rotateX}px 20px rgba(255, 255, 255, 0.3)`;
+      tab.style.textShadow = `${-rotateY}px ${rotateX}px 20px rgba(255, 255, 255, 0)`;
     });
   });
 
