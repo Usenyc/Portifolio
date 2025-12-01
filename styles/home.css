@@ -99,25 +99,34 @@ body {
   border-radius: 16px 16px 0 0;
   padding: 16px 20px 12px;   /* tav houver atualizado*/
 }
-
-
 .surface {
   width: 100%;
-  min-height: 100vh;
+  height: calc(100vh - 60px);
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   position: relative;
   margin: 0;
-  min-height: calc(100vh - 60px);
-  align-items: center;
- 
-  /* garante centro vertical */
-  position: relative;
+  overflow: hidden;
+}
+/*   */
 
-
-  /* opcional: deixa sempre centralizado/bonito */
+/* A ESFERA NO CANTO DIREITO */
+.side-img-container {
+  position: absolute;
+  top: 60%;
+  right: 40px;      /* <-- distancia da borda direita */
+  transform: translateY(-50%);
+  z-index: 4;
+  pointer-events: none;
 }
 
+.side-img-container img {
+  width: 500px;     /* Ajuste o tamanho da esfera */
+  height: auto;
+  display: block;
+}
 .below-nav {
   position: relative;
   width: 100%;
@@ -128,7 +137,7 @@ body {
   padding: 40px 20px;
 
   /* fundo diferente só nessa parte */
-  background: url("/assets/fundo1.png") center center no-repeat;
+  background: url("/assets/1pageinicial.png") center center no-repeat;
   background-size: cover;
 }
 
@@ -142,7 +151,7 @@ body {
   padding: 50px 0;
 
   /* aqui você escolhe o fundo */
-  background: url("/assets/fundo3.png") center center no-repeat;
+  background: url("/assets/3pagefundo (1).png") center center no-repeat;
   background-size: cover;
 }
 .bottom1-part {
@@ -175,15 +184,46 @@ body {
   gap: 24px;
   width: 80%;
 }
+.side-img {
+  position: absolute;
+  top: 80px;       /* distância do topo */
+  right: 40px;     /* distância da direita */
+  width: 420px;    /* ajuste o tamanho da esfera */
+  height: auto;
+  z-index: 3;
+  pointer-events: none; /* não atrapalha o clique */
+
+  pointer-events: none;
+  transition: transform 0.25s ease-out;
+  opacity: 0.95;
+}
 
 .hero-copy {
-  position: absolute;
-  left: 34%;
-  bottom: 150px;
-  transform: translateX(-50%);
-  max-width: 720px;
-  text-align: left;
+  max-width: 700px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  /* remove completamente */
+  position: static;
+  transform: none;
+  left: auto;
+  bottom: auto;
 }
+
+
+/* ===============================
+   LOGO USENYC
+================================== */
+.logo-sh {
+  width: 750px;  
+  max-width: 90%;
+  margin-bottom: 10px;
+}
+
 
 .hero-copy img {
   width: 100%;
@@ -285,24 +325,6 @@ body {
 }
 
 
-.side-img {
-  width: 260px;
-  position: absolute;
-  top: 40%;
-  left: 700px;
-  /* AGORA ELA VAI PARA O LADO ESQUERDO */
-  transform: translateY(-60%);
-  /* centraliza verticalmente */
-  z-index: 4;
-  pointer-events: none;
-  transform-style: preserve-3d;
-  transition: transform 0.15s ease-out;
-}
-
-.side-img.right {
-  transform: translateY(50px);
-  /* ajuste fino */
-}
 
 .circle-container {
   position: relative;
@@ -430,4 +452,50 @@ bottom3-part {
   /* aqui você escolhe o fundo */
   background: url("/assets/fundo3.png") center center no-repeat;
   background-size: cover;
+}
+
+/* animações da side-img */
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.side-img {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* animações pra cima e pra baixo logo-sh */
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+}
+.logo-sh {
+  animation: pulse 4s ease-in-out infinite;
+}
+
+
+/* animar fundo pra cima e pra baixo below-nav*/
+
+@keyframes bg-move {
+  0%, 100% {
+    background-position: center center;
+  }
+  50% {
+    background-position: center 20px;
+  }
+}
+.below-nav {
+  animation: bg-move 10s ease-in-out infinite;
 }
