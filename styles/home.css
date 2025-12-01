@@ -90,28 +90,27 @@ body {
   text-decoration: none;
   color: #d7dbe5;
   font-weight: 600;
+  transition: 0.2s;
 }
 
 .tab:hover {
-  color: #fff
-}
-
-.tab.active {
   color: #fff;
   background: var(--tab);
   border-radius: 16px 16px 0 0;
-  padding: 16px 20px 12px;
+  padding: 16px 20px 12px;   /* tav houver atualizado*/
 }
 
+
 .surface {
-  position: relative;
-  margin: 0;
   width: 100%;
-  min-height: calc(100vh - 60px);
+  min-height: 100vh;
   display: flex;
   justify-content: center;
+  position: relative;
+  margin: 0;
+  min-height: calc(100vh - 60px);
   align-items: center;
-  min-height: 100vh;
+ 
   /* garante centro vertical */
   position: relative;
 
