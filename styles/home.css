@@ -169,6 +169,7 @@ body {
 
 .hero-copy {
   position: absolute;
+  top: 400px;
   left: 34%;
   bottom: 150px;
   transform: translateX(-50%);
@@ -188,11 +189,14 @@ body {
   margin: 0 0 6px 0;
   font-family: Sora, Inter, sans-serif;
   font-weight: 600;
-  font-size: clamp(24px, 4vw, 36px);
+  font-size: clamp(24px, 4vw, 40px);
   letter-spacing: 0.02em;
   color: var(--text);
 }
+.logo-sh {
+  width: 600px;
 
+}
 .sub {
   margin: 0 0 26px;
   font-size: 15px;
@@ -443,7 +447,7 @@ body {
   perspective: 1200px;
 
   /* aqui você escolhe o fundo */
-  background: url("/assets/fundo3.png") center center no-repeat;
+  background: url("/assets/fundo_3.png") center center no-repeat;
   background-size: cover;
 }
 
@@ -534,76 +538,60 @@ body {
 }
 
 .footer {
-  display: flex;
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 1600px;
-  height: auto;
-  transition: transform 0.4s ease;
-  /* suaviza o movimento */
-  z-index: 16;
-}
-
-/* estilos específicos */
-.footer {
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  width: 1600px;
-  height: auto;
-  transition: transform 0.6s ease;
-  /* suaviza o movimento */
+  position: absolute;       
+  top: 60%;                 
+  left: 50%;                
+  width: 1600px;            
+  height: auto;            
+  transition: transform 0.6s ease; /* suaviza o movimento */
   z-index: 16;
 }
 
 .footer:hover {
-  transform: translateX(-50%) translateY(0);
-  /* sobe quando passa o mouse */
+  transform: translateX(-50%) translateY(0); /* sobe quando passa o mouse */
 }
 
-
+/* estado inicial do footer2: invisível */
 .footer2 {
   position: absolute;
-  bottom: 4%;
-  left: 30%;
+  bottom: 4%;                 
+  left: 30%;                  
   transform: translateX(-50%);
   font-size: 18px;
   font-weight: 100;
   color: #ffffff;
-  opacity: 0;
-  transition: opacity 0.8s ease;
+  opacity: 0;                      /* começa invisível */
+  transition: opacity 0.8s ease;   /* suaviza o fade */
   z-index: 16;
   font-family: 'Sora', sans-serif;
 }
 
-
-.footer:hover+.footer2 {
+/* quando passar o mouse no footer, o footer2 aparece */
+.footer:hover + .footer2 {
   opacity: 1;
 }
 
 #men2 {
-  bottom: 3%;
+    bottom: 3%; 
 
 }
 
 .footer3 {
   position: absolute;
-  bottom: 1.5%;
-  left: 26%;
+  bottom:1.5%;                 
+  left:26%;                  
   transform: translateX(-50%);
   font-size: 18px;
   font-weight: 100;
   color: #ffffff;
-  opacity: 0;
-  transition: opacity 0.8s ease;
+  opacity: 0;                      /* começa invisível */
+  transition: opacity 0.8s ease;   /* suaviza o fade */
   z-index: 16;
   font-family: 'Sora', sans-serif;
 }
 
-
-.footer:hover~.footer3 {
+/* quando passar o mouse no footer, o footer3 também aparece */
+.footer:hover ~ .footer3 {
   transform: translateX(-50%) translateY(0);
   opacity: 1;
 }
@@ -631,82 +619,93 @@ body {
   transition: transform 0.3s ease;
 }
 
+.instagram {
+  width: 50px;    /* tamanho pequeno */
+  height: 50px;
+  cursor: pointer;
+}
+.github {
+  width: 50px;    /* tamanho pequeno */
+  height: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.linkedin{
+    /* tamanho pequeno */
+  height: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
 .instagram:hover {
-  transform: scale(1.2);
-  /* aumenta levemente no hover */
+  transform: scale(1.2); /* aumenta levemente no hover */
 }
-
 .github:hover {
-  transform: scale(1.2);
-  /* aumenta levemente no hover */
+  transform: scale(1.2); /* aumenta levemente no hover */
 }
-
 .linkedin:hover {
-  transform: scale(1.2);
-  /* aumenta levemente no hover */
+  transform: scale(1.2); /* aumenta levemente no hover */
 }
 
 .social-icons {
   position: absolute;
-  bottom: -0.5%;
-  left: 70%;
-  transform: translateX(-50%) translateY(50px);
-  /* começa deslocado */
-  opacity: 0;
-  transition: transform 0.6s ease, opacity 0.8s ease;
+  bottom: -0.5%;                 
+  left: 70%;                  
+  transform: translateX(-50%) translateY(50px); /* começa deslocado */
+  opacity: 0;                     
+  transition: transform 0.6s ease, opacity 0.8s ease; 
   display: flex;
   gap: 10px;
   z-index: 16;
 }
 
-.footer:hover~.social-icons {
+.footer:hover ~ .social-icons {
   transform: translateX(-50%) translateY(0);
   opacity: 1;
 }
 
-/* From Uiverse.io by alexroumi */
+/* From Uiverse.io by alexroumi */ 
 button {
-  padding: 15px 25px;
-  left: -100px;
-  border: unset;
-  border-radius: 30px;
-  color: #6c6f75;
-  z-index: 1;
-  background: #e8e8e8;
-  position: relative;
-  font-weight: 1000;
-  font-size: 20px;
-  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
-  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
-  transition: all 250ms;
-  overflow: hidden;
-  top: 200px;
-  z-index: 2000;
+ padding: 15px 25px;
+ left:400px;
+ border: unset;
+ border-radius: 30px;
+ color: #6c6f75;
+ z-index: 1;
+ background: #e8e8e8;
+ position: relative;
+ font-weight: 1000;
+ font-size: 20px;
+ -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ transition: all 250ms;
+ overflow: hidden;
+ top: -250px;
+ z-index: 2000;
 }
 
 button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 0;
-  border-radius: 15px;
-  background-color: #6c6f75;
-  z-index: -1;
-  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
-  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
-  transition: all 250ms
+ content: "";
+ position: absolute;
+ top: 0;
+ left: 0;
+ height: 100%;
+ width: 0;
+ border-radius: 15px;
+ background-color: #6c6f75;
+ z-index: -1;
+ -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ transition: all 250ms
 }
 
 button:hover {
-  color: #e8e8e8;
+ color: #e8e8e8;
 }
 
 button:hover::before {
-  width: 100%;
+ width: 100%;
 }
-
 .pagina {
   width: 100px;
   height: 500px;
