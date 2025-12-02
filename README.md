@@ -2,14 +2,10 @@
 
 #### A Usenyc é uma empresa fictícia criada para fins educacionais no curso de Desenvolvimento de Software. Nosso propósito é simular uma empresa moderna de Inteligência Artificial e Automação, mostrando como tecnologias avançadas podem otimizar processos e melhorar resultados em ambientes reais.
 
-<br>
-<br>
-<div style="text-align: center;">
-  <img src="assets/usenycname.png" width="340">
-</div>
-<br>
-<br>
 
+<p align="center">
+    <img src="assets/usenycname.png" width="340">
+</p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/HTML-orange?logo=html5">
