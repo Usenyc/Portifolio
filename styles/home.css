@@ -279,6 +279,8 @@ body {
   justify-content: center;
   align-items: center;
   padding: 50px 0;
+  background: url("/assets/fundo4.png") center center no-repeat;
+  background-size: cover;
 
 }
 
@@ -703,4 +705,66 @@ button:hover {
 
 button:hover::before {
   width: 100%;
+}
+
+.pagina {
+  width: 100px;
+  height: 500px;
+  margin: 10px;
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 0.4s ease, background-color 0.4s ease, filter 0.8s ease;
+  flex-direction: column;
+  filter: blur(0.5px);
+}
+
+.pagina:hover {
+  width: 300px;
+  background-color: rgba(255, 255, 255, 0.2);
+    filter: blur(0) /* muda cor ao passar o mouse */
+}
+
+
+
+
+.pagina1 {
+  background-image: url('/assets/pagina1.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.pagina2 {
+  background-image: url('/assets/pagina2.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.pagina3 {
+  background-image: url('/assets/pagina3.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.pagina4 {
+  background-image: url('/assets/pagina4.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.pagina5 {
+  background-image: url('/assets/pagina5.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.separador {
+  border: none;
+  height: 2px;               /* espessura */
+  width: 60px;               /* largura pequena */;
+  margin: 20px auto;         /* centraliza */
+  border-radius: 2px;
 }

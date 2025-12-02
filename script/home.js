@@ -119,8 +119,9 @@
     bottomContainer.addEventListener('mouseleave', () => {
       tabs.forEach(tab => {
         tab.style.transform = 'translate(-50%, -50%) rotateX(0deg) rotateY(0deg)';
-        tab.style.textShadow = '0 8px 18px rgba(255, 255, 255, 0.44)';
+        tab.style.textShadow = '0 8px 18px rgba(255, 255, 255, 0.16)';
       });
     });
   }
 });
+
