@@ -5,10 +5,11 @@
 <br>
 <br>
 <div style="text-align: center;">
-  <img src="assets/usenycname.png" width="300">
+  <img src="assets/usenycname.png" width="340">
 </div>
 <br>
 <br>
+
 
 <p align="center">
   <img src="https://img.shields.io/badge/HTML-orange?logo=html5">
@@ -16,6 +17,7 @@
   <img src="https://img.shields.io/badge/JavaScript-yellow?logo=javascript">
 </p>
 <br>
+
 
 ## **O Que Fazemos?**
 
@@ -142,10 +144,9 @@ O site foi construído com tecnologias simples, rápidas e eficientes:
 
 <br>
 <br>
-<p align="left">
+<p align="center">
   <a href="https://github.com/DEVdamas97">
-    <img src="https://github.com/DEVdamas97.png
-    " width="80">
+    <img src="https://github.com/DEVdamas97.png" width="80">
   </a>
   <a href="https://github.com/vizwoxs">
     <img src="https://github.com/vizwoxs.png" width="80">
@@ -153,14 +154,11 @@ O site foi construído com tecnologias simples, rápidas e eficientes:
   <a href="https://github.com/Felip3CA">
     <img src="https://github.com/Felip3CA.png" width="80">
   </a>
-    <a href="https://github.com/https:/jacke9409">
+  <a href="https://github.com/jacke9409">
     <img src="https://github.com/jacke9409.png" width="80">
   </a>
 </p>
 <br>
 <br>
-
-
-
 
 # <span style="color:#fbbf24;">**Right-arm em suas estrátegias.**</span>
