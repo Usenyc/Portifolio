@@ -767,3 +767,14 @@ button:hover::before {
   margin: 20px auto;         /* centraliza */
   border-radius: 2px;
 }
+
+
+.corner-image {
+  position: relative;  
+  top: 300px;   /* fica sempre visível na tela */
+  bottom: 70px;        /* distância da borda inferior */
+  right: -600px;         /* distância da borda direita */
+  width: 15%;         /* largura pequena */
+  height: auto;        /* mantém proporção da imagem */
+  z-index: 1000;       /* fica por cima de outros elementos */
+}
