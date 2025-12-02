@@ -568,6 +568,7 @@ body {
 
 /* quando passar o mouse no footer, o footer2 aparece */
 .footer:hover + .footer2 {
+  transform: translateX(-50%) translateY(0);
   opacity: 1;
 }
 
@@ -594,6 +595,7 @@ body {
 .footer:hover ~ .footer3 {
   transform: translateX(-50%) translateY(0);
   opacity: 1;
+
 }
 
 /* Estilo do ícone Instagram */
@@ -770,6 +772,7 @@ button:hover::before {
 
 
 .corner-image {
+  
   position: relative;  
   top: 300px;   /* fica sempre visível na tela */
   bottom: 70px;        /* distância da borda inferior */
