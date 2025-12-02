@@ -667,7 +667,7 @@ body {
 /* From Uiverse.io by alexroumi */ 
 button {
  padding: 15px 25px;
- left:400px;
+ left:600px;
  border: unset;
  border-radius: 30px;
  color: #6c6f75;
@@ -680,7 +680,7 @@ button {
  box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
  transition: all 250ms;
  overflow: hidden;
- top: -250px;
+ top: -350px;
  z-index: 2000;
 }
 
